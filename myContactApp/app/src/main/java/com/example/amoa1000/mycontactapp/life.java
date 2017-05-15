@@ -22,14 +22,17 @@ public class life extends AppCompatActivity {
 
         mydb = new databaseHelper(this);
 
+        editName = (EditText) findViewById(R.id.editText_name);
+
     }
 
     public void  addData(View v){
         boolean isInserted = mydb.insertData(editName.getText().toString());
         if(isInserted = true){
-            Log.d("MyContact", "Data Inserted");
+            Log.d("MyContact", "Data Inserted successful");
         }
         else{
+            Log.d("MyContact", "Data Inserted not successful");
 
         }
     }
