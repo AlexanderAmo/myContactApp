@@ -1,5 +1,6 @@
 package com.example.amoa1000.mycontactapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,7 +17,7 @@ public class databaseHelper extends SQLiteOpenHelper{
     public static final String COL_2 = "NAME";
 
     public databaseHelper(Context context) {
-        super(context, DATABASE_NAME);
+        super(context, DATABASE_NAME,null,1);
     }
 
     @Override
@@ -30,5 +31,12 @@ public class databaseHelper extends SQLiteOpenHelper{
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+    public boolean insertData(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        long result = db.insert(TABLE_NAME,null,contentValues);
+
+        return (result != -1);
     }
 }
