@@ -2,6 +2,7 @@ package com.example.amoa1000.mycontactapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -32,11 +33,20 @@ public class databaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
     public boolean insertData(String name){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        long result = db.insert(TABLE_NAME,null,contentValues);
+        contentValues.put(COL_2,name);
 
-        return (result != -1);
+        long result = db.insert(TABLE_NAME,null,contentValues);
+        if (result != -1) return false;
+        else return true;
+    }
+
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select + from" + TABLE_NAME,null);
+        return res;
     }
 }

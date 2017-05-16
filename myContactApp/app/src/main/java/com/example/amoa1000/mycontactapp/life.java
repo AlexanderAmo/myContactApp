@@ -1,5 +1,6 @@
 package com.example.amoa1000.mycontactapp;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,5 +36,28 @@ public class life extends AppCompatActivity {
             Log.d("MyContact", "Data Inserted not successful");
 
         }
+    }
+
+    public void viewData(View v){
+        Cursor res = mydb.getAllData();
+
+        if(res.getCount() == 0){
+            showMessage("error: ", "THERE ISNT ANY DATA BITCH");
+            return;
+
+        }
+
+        StringBuffer buffer = new StringBuffer();
+        //setup a loop with moveToNext method
+        // append each Col to buffer
+        // use getString method
+       for(int i = 0; i< res.getColumnCount();i++){
+           showMessage("Data", buffer.toString());
+        }
+
+    }
+
+    private void showMessage(String title, String message) {
+
     }
 }
