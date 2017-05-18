@@ -18,9 +18,6 @@ public class life extends AppCompatActivity {
     EditText editNumber;
     EditText editAddress;
 
-    Button data;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +29,7 @@ public class life extends AppCompatActivity {
         editName = (EditText) findViewById(R.id.editText_name);
         editAddress = (EditText) findViewById(R.id.editText_address);
         editNumber = (EditText) findViewById(R.id.editText_number);
+
 
     }
 
@@ -52,24 +50,24 @@ public class life extends AppCompatActivity {
         if(res.getCount() == 0){
            showMessage("error: ", "THERE ISNT ANY DATA");
             return;
-
         }
 
         StringBuffer buffer = new StringBuffer();
-        //setup a loop with moveToNext method
-        // append each Col to buffer
-        // use getString method
 
-       while(!(res.isLast())) {
-           for (int i = 1;i< res.getColumnCount();i++){
-               buffer.append(res.getString(i));
+       while(res.moveToNext()) {                                         // setup a loop with moveToNext method
+           for (int i = 1;i< res.getColumnCount();i++){                 // append each Col to buffer
+               buffer.append(res.getString(i));                        // use getString method
            }
-
-           res.moveToNext();
        }
         showMessage("Data", buffer.toString());
+    }
+
+
+    public void searchScreen(View v){
 
     }
+
+
 
     private void showMessage(String title, String message) {
         AlertDialog.Builder Builder = new AlertDialog.Builder(this);

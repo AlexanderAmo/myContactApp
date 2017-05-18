@@ -20,24 +20,6 @@
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/editText_number" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText_name"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add Contact"
-        android:id="@+id/button_add"
-        android:onClick="addData"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/textView2" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,18 +28,9 @@
         android:textColor="#000000"
         android:height="40dp"
         android:textSize="30dp"
-        android:layout_above="@+id/editText_address"
+        android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="117dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText_number"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_marginTop="26dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,9 +40,18 @@
         android:textColor="#000000"
         android:height="40dp"
         android:textSize="30dp"
-        android:layout_above="@+id/button_add"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="65dp" />
+        android:layout_below="@+id/textView2"
+        android:layout_toStartOf="@+id/editText_number"
+        android:layout_marginTop="35dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_name"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -80,13 +62,52 @@
         android:layout_alignBottom="@+id/textView3"
         android:layout_toEndOf="@+id/textView2" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_number"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add Contact"
+        android:id="@+id/button_add"
+        android:onClick="addData"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/editText_address" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="view Contact"
         android:id="@+id/button_view"
         android:onClick="viewData"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@+id/button_add"
+        android:layout_alignEnd="@+id/editText_address"
+        android:layout_alignTop="@+id/button_add" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="search"
+        android:id="@+id/button_search"
+        android:nestedScrollingEnabled="false"
+        android:onClick="searchScreen"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/button_view"
+        android:layout_alignStart="@+id/button_view"
+        android:layout_alignEnd="@+id/button_view" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remove All"
+        android:id="@+id/button_remove"
+        android:layout_alignTop="@+id/button_search"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

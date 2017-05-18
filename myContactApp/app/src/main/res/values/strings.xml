@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">myContactApp</string>
+    <string name="title_activity_search_for_contacts">searchForContacts</string>
+    <string name="title_activity_search_contacts">searchContacts</string>
 </resources>
