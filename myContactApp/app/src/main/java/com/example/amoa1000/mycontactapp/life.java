@@ -1,5 +1,6 @@
 package com.example.amoa1000.mycontactapp;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -64,7 +65,8 @@ public class life extends AppCompatActivity {
 
 
     public void searchScreen(View v){
-
+        Intent intent = new Intent(this,searchContactss.class);
+        startActivity(intent);
     }
 
 

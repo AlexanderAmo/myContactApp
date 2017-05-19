@@ -15,15 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".searchContacts"
-            android:label="@string/title_activity_search_contacts"
-            android:parentActivityName=".life"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.amoa1000.mycontactapp.life" />
-        </activity>
+        <activity android:name=".searchContactss"></activity>
     </application>
 
 </manifest>
