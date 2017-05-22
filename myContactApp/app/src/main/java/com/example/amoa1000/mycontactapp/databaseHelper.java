@@ -20,6 +20,7 @@ public class databaseHelper extends SQLiteOpenHelper{
     public static final String COL_3 = "NUMBER";
     public static final String COL_4 = "ADDRESS";
 
+
     public databaseHelper(Context context) {
         super(context, DATABASE_NAME,null,2);
     }
@@ -54,4 +55,9 @@ public class databaseHelper extends SQLiteOpenHelper{
         Cursor res = db.rawQuery("select * from " + TABLE_NAME,null);
         return res;
     }
+    /*public Cursor searchData(String search){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE NAME = " + search,null);
+        return res;
+    }*/
 }

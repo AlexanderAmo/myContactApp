@@ -37,10 +37,12 @@ public class life extends AppCompatActivity {
     public void  addData(View v){
         boolean isInserted = mydb.insertData(editName.getText().toString(), editNumber.getText().toString(), editAddress.getText().toString());
         if(isInserted = true){
-            Log.d("MyContact", "Data Inserted successful");
+            Toast.makeText(this,"Contacted added successfully!",Toast.LENGTH_SHORT).show();
         }
         else{
-            Log.d("MyContact", "Data Inserted not successful");
+
+            Toast.makeText(this,"Contacted didn't get added!",Toast.LENGTH_SHORT).show();
+
 
         }
     }
@@ -57,10 +59,11 @@ public class life extends AppCompatActivity {
 
        while(res.moveToNext()) {                                         // setup a loop with moveToNext method
            for (int i = 1;i< res.getColumnCount();i++){                 // append each Col to buffer
-               buffer.append(res.getString(i));                        // use getString method
+               buffer.append(res.getString(i) + " ");                        // use getString method
            }
+           buffer.append("\n\n");
        }
-        showMessage("Data", buffer.toString());
+        showMessage("Your Contacts", buffer.toString());
     }
 
 
